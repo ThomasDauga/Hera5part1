@@ -4,6 +4,7 @@ class Arena {
     this.monsters = monsters;
     this.size = size;
     this.message = "";
+    this.tiles = [];
   }
 
   /**
@@ -38,18 +39,24 @@ class Arena {
     if (direction === "S") this.hero.y += 1;
     if (direction === "E") this.hero.x -= 1;
     if (direction === "W") this.hero.x += 1;
-
+    const tile =  this.getTile(this.hero.x, this.hero.y)
     if (!this.checkOnMap(this.hero.x, this.hero.y)) {
       this.message = "Moving outside the map is not possible";
     } else if (!this.CheckNoMonster(this.hero.x, this.hero.y)) {
       this.message = "Position already used, you can t move here";
+    }else if(tile[0] && !tile[0].crossable) {
+      this.message = "Not crossable";
     } else {
-      return { x, y };
+      return { x, y };  
     }
 
     document.getElementById('error').innerHTML = this.message;
     this.hero.x = x;
     this.hero.y = y;
+  }
+  
+  getTile(x,y){
+    return this.tiles.filter(tile=>tile.x ===x && tile.y ===y)
   }
 
   /**

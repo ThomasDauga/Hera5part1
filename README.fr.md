@@ -22,7 +22,7 @@ Dans `Tile` ajoute un constructeur avec deux paramètres, permettant de spécifi
 Mets également une chaîne vide par défaut pour la propriété `image`;
 
 Sur ta carte, tu vas avoir plusieurs types de tuiles représentant les différents éléments du paysage (herbe, eau...), chacune ayant ses propres spécifités (traversable ou non...). Tu ne seras jamais amené à instancier directement une classe `Tile`, mais toujours quelques chose de plus précis.
-> *En POO, c'est ce que l'on appelle une classe dites abstaite! C'est une classe Objet qui n'est pas instancié directement mais toujours via le biais d'une autre classe.*
+> *En POO, c'est ce que l'on appelle une classe dites abstraite! C'est une classe Objet qui n'est pas instancié directement mais toujours via le biais d'une autre classe.*
 
 Tu vas créer autant de nouvelles classes que de types de tuile. Créé pour commencer une classe `Grass` et une `Water` toutes deux héritant de `Tile`. Pour le moment, spécifie uniquement une valeur par défaut à la propriété `image` dans le constructor respectivement *grass.png* et *water.jpg* et n'oublies pas de passer la valeur de `x` et `y` dans le `super()`. Ces classes sont un peu vides et peu différentes, mais elles vont se spécialiser par la suite ;-).
 
